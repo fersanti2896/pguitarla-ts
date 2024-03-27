@@ -1,5 +1,13 @@
+import { GuitarItem } from "../types/guitar.type";
+import { HeaderProps } from "../types/header-prop.type";
 
-function Header({ cart, removeFromCart, incrementQuantity, decrementQuantity, clearCart, isEmpty, cartTotal }) {
+function Header({ cart, 
+                  removeFromCart,
+                  incrementQuantity, 
+                  decrementQuantity, 
+                  clearCart, 
+                  isEmpty, 
+                  cartTotal } : HeaderProps)  {
     return (
         <>
             <header className="py-5 header">
@@ -38,7 +46,7 @@ function Header({ cart, removeFromCart, incrementQuantity, decrementQuantity, cl
                                                     </thead>
                                                     <tbody>
                                                         {
-                                                            cart.map(({ id, name, price, quantity, image }) => (
+                                                            cart.map(({ id, name, price, quantity, image } : GuitarItem) => (
                                                                 <tr key={id}>
                                                                     <td>
                                                                         <img
